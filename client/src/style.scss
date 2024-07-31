@@ -6,8 +6,7 @@ $lightGreen: #b9e7e7;
   display: flex;
   justify-content: center;
   .container {
-    // width: 1024px;
-    width: 100%;
+    width: 1024px;
 
     .link {
       text-decoration: none;
@@ -67,7 +66,6 @@ $lightGreen: #b9e7e7;
     }
 
     //NAVBAR
-
     .navbar {
       .container {
         padding: 10px 0px;
@@ -115,7 +113,6 @@ $lightGreen: #b9e7e7;
     }
 
     //FOOTER
-
     footer {
       margin-top: 100px;
       padding: 20px;
@@ -130,7 +127,6 @@ $lightGreen: #b9e7e7;
     }
 
     //HOME
-
     .home {
       .posts {
         margin-top: 50px;
@@ -203,7 +199,6 @@ $lightGreen: #b9e7e7;
     }
 
     //SINGLE
-
     .single {
       display: flex;
       gap: 50px;
@@ -304,7 +299,6 @@ $lightGreen: #b9e7e7;
     }
 
     //WRITE
-
     .add {
       margin-top: 20px;
       display: flex;
