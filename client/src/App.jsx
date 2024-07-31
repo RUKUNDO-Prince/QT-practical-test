@@ -3,6 +3,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router-dom'
 import { Home, Login, Register, Single, Write } from './pages';
 import { Footer, Navbar } from './components';
+import "./style.scss"
 
 // FOR PAGES THAT WILL CONTAIN THE NAVBAR AND FOOTER
 const Layout = () => {
