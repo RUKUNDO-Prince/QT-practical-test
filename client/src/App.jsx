@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// IMPORTS
+import React from 'react'
+import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router-dom'
+import { Home, Login, Register, Single, Write } from './pages';
+import { Footer, Navbar } from './components';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// FOR PAGES THAT WILL CONTAIN THE NAVBAR AND FOOTER
+const Layout = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
+  )
+}
+
+// PAGES ROUTES
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/write",
+        element: <Write />
+      },
+      {
+        path: "/post/:id",
+        element: <Single />
+      },
+    ]
+  },
+  {
+    path: "/register",
+    element: <Register />
+  },
+  {
+    path: "/login",
+    element: <Login />
+  }
+]);
+
+const App = () => {
+  return (
+    <div className='app'>
+      <div className='container'>
+        <RouterProvider router={router} />
+      </div>
+    </div>
   )
 }
 
