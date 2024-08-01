@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { deleteIcon, edit } from "../assets/img";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "../components";
 import axios from 'axios'
 import { AuthContext } from "../context/authContext";
@@ -9,6 +9,8 @@ import moment from 'moment'
 const Single = () => {
   const [post, setPost] = useState({});
 
+  const navigate = useNavigate();
+  
   const location = useLocation();
   const postId = location.pathname.split("/")[2];
 
@@ -26,6 +28,15 @@ const Single = () => {
     fetchData();
   }, [postId]);
 
+  const handleDelete = async() => {
+    try {
+      await axios.delete(`/api/posts/${postId}`);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className="single">
       <div className="content">
@@ -42,11 +53,11 @@ const Single = () => {
             <span>{post?.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          {currentUser === post.username && <div className="edit">
+          {currentUser?.username === post.username && <div className="edit">
             <Link to={`/write?edit=2`}>
               <img src={edit} alt="Edit-Icon" />
             </Link>
-            <img src={deleteIcon} alt="Delete-Icon" />
+            <img onClick={handleDelete} src={deleteIcon} alt="Delete-Icon" />
           </div>}
         </div>
         <h1>{post.title}</h1>
