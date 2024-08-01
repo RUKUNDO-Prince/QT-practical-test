@@ -1,7 +1,22 @@
-import React from 'react'
-import { posts } from '../constants/data'
+import React, { useEffect, useState } from 'react'
+// import { posts } from '../constants/data'
+import axios from "axios"
 
-const Menu = () => {
+const Menu = ({ category }) => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`/api/posts/?category=${category}`);
+        setPosts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, [category]);
+
   return (
     <div className='menu'>
         <h1>Other posts you may like</h1>

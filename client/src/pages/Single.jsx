@@ -45,15 +45,15 @@ const Single = () => {
           alt=""
         />
         <div className="user">
-          {post.userImg && <img
-            src={post.userImg}
+          {post?.userImg && <img
+            src={post?.userImg}
             alt=""
           />}
           <div className="info">
             <span>{post?.username}</span>
-            <p>Posted {moment(post.date).fromNow()}</p>
+            <p>Posted {moment(post?.date).fromNow()}</p>
           </div>
-          {currentUser?.username === post.username && <div className="edit">
+          {currentUser?.username === post?.username && <div className="edit">
             <Link to={`/write?edit=2`}>
               <img src={edit} alt="Edit-Icon" />
             </Link>
@@ -64,7 +64,7 @@ const Single = () => {
         {post.content}
       </div>
       <div className="menu">
-        <Menu />
+        <Menu category={post?.category} />
       </div>
     </div>
   );

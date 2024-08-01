@@ -10,6 +10,7 @@ export const getPosts = (req, res) => {
 };
 
 export const getPost = (req, res) => {
+    // QUERY TO JOIN THE TABLES THEN RETURN THE POST
     const q = "SELECT `username`, `title`, `content`, p.img, u.img as userImg, `category`, `date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ?";
     db.query(q, [req.params.id], (err, data) => {
         if (err) return res.status(500).json(err);
