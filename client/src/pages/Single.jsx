@@ -41,7 +41,7 @@ const Single = () => {
     <div className="single">
       <div className="content">
         <img
-          src={post?.img}
+          src={`../uploads/${post?.img}`}
           alt=""
         />
         <div className="user">
@@ -54,7 +54,7 @@ const Single = () => {
             <p>Posted {moment(post?.date).fromNow()}</p>
           </div>
           {currentUser?.username === post?.username && <div className="edit">
-            <Link to={`/write?edit=2`}>
+            <Link to={`/write?edit=2`} state={post}>
               <img src={edit} alt="Edit-Icon" />
             </Link>
             <img onClick={handleDelete} src={deleteIcon} alt="Delete-Icon" />
