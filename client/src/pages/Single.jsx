@@ -1,93 +1,56 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { deleteIcon, edit } from "../assets/img";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu } from "../components";
+import axios from 'axios'
+import { AuthContext } from "../context/authContext";
+import moment from 'moment'
 
 const Single = () => {
+  const [post, setPost] = useState({});
+
+  const location = useLocation();
+  const postId = location.pathname.split("/")[2];
+
+  const { currentUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`/api/posts/${postId}`);
+        setPost(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, [postId]);
+
   return (
     <div className="single">
       <div className="content">
         <img
-          src="https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src={post?.img}
           alt=""
         />
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          {post.userImg && <img
+            src={post.userImg}
             alt=""
-          />
+          />}
           <div className="info">
-            <span>Prince</span>
-            <p>Posted 2 days ago</p>
+            <span>{post?.username}</span>
+            <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          <div className="edit">
+          {currentUser === post.username && <div className="edit">
             <Link to={`/write?edit=2`}>
               <img src={edit} alt="Edit-Icon" />
             </Link>
             <img src={deleteIcon} alt="Delete-Icon" />
-          </div>
+          </div>}
         </div>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-          consectetur adipisicing elitLorem ipsum dolor sit amet consectetur
-          adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing
-          elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
-          dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet
-        </p>
+        <h1>{post.title}</h1>
+        {post.content}
       </div>
       <div className="menu">
         <Menu />
