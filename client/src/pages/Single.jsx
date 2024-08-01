@@ -5,6 +5,7 @@ import { Menu } from "../components";
 import axios from 'axios'
 import { AuthContext } from "../context/authContext";
 import moment from 'moment'
+import DOMPurify from "dompurify";
 
 const Single = () => {
   const [post, setPost] = useState({});
@@ -37,6 +38,11 @@ const Single = () => {
     }
   }
 
+  const getText = (html) =>{
+    const doc = new DOMParser().parseFromString(html, "text/html")
+    return doc.body.textContent
+  }
+
   return (
     <div className="single">
       <div className="content">
@@ -54,14 +60,20 @@ const Single = () => {
             <p>Posted {moment(post?.date).fromNow()}</p>
           </div>
           {currentUser?.username === post?.username && <div className="edit">
-            <Link to={`/write?edit=2`} state={post}>
+            <Link to={`/write?edit`} state={post}>
               <img src={edit} alt="Edit-Icon" />
             </Link>
             <img onClick={handleDelete} src={deleteIcon} alt="Delete-Icon" />
           </div>}
         </div>
-        <h1>{post.title}</h1>
-        {post.content}
+        <div className="post-content">
+          <h1>{post.title}</h1>
+          <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.content),
+          }}
+        ></p> 
+        </div>
       </div>
       <div className="menu">
         <Menu category={post?.category} />

@@ -79,14 +79,14 @@ const Write = () => {
             <b>Visibility: </b> Public
           </span>
           <input
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
             type="file"
             id="file"
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <label className="file" htmlFor="file">
+          {/* <label className="file" htmlFor="file">
             Upload image
-          </label>
+          </label> */}
           <div className="buttons">
             <button>Save as Draft</button>
             <button onClick={handleClick}>Publish</button>
@@ -94,7 +94,7 @@ const Write = () => {
         </div>
         <div className="item">
           <h1>Category</h1>
-          <div className="cat">
+          <div className="category">
             <input
               type="radio"
               checked={category === "arts"}

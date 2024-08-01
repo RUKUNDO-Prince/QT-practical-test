@@ -15,6 +15,7 @@ const Navbar = () => {
             <img src={logo} alt="Logo" />
           </Link>
         </div>
+        {/* CATEGORIES LIST */}
         <div className="links">
           <Link to="/?category=art" className='link'><h6>Arts</h6></Link>
           <Link to="/?category=science" className='link'><h6>Science</h6></Link>
@@ -22,8 +23,10 @@ const Navbar = () => {
           <Link to="/?category=cinema" className='link'><h6>Cinema</h6></Link>
           <Link to="/?category=design" className='link'><h6>Design</h6></Link>
           <Link to="/?category=food" className='link'><h6>Food</h6></Link>
+        </div>
+        <div className='other-links'>
           <span>{currentUser?.username}</span>
-          {currentUser ? <span onClick={logout}>Logout</span> : <Link className='link' to="/login">Login</Link>}
+          {currentUser ? <span className='logout' onClick={logout}>Logout</span> : <Link className='link' to="/login">Login</Link>}
           <span className='write'><Link className='link' to='/write'>Write</Link></span>
         </div>
       </div>
