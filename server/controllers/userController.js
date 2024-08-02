@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { db } from "../config/DBConnect.js";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -32,10 +32,10 @@ export const getUserProfile = (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
-        const q = "SELECT `id`, `username`, `email`, `img` FROM users WHERE `id` = ?";
+        const q = "SELECT id, username, email, img FROM users WHERE id = $1";
         db.query(q, [userInfo.id], (err, data) => {
             if (err) return res.status(500).json(err);
-            return res.status(200).json(data[0]);
+            return res.status(200).json(data.rows[0]);
         });
     });
 };
@@ -70,22 +70,26 @@ export const updateUserProfile = (req, res) => {
             };
 
             updateFields().then(fields => {
-                const q = "UPDATE users SET ? WHERE `id` = ?";
-                db.query(q, [fields, userInfo.id], (err, data) => {
+                const q = `UPDATE users SET 
+                            ${Object.keys(fields).map((key, index) => `${key} = $${index + 1}`).join(", ")} 
+                            WHERE id = $${Object.keys(fields).length + 1}`;
+
+                const values = [...Object.values(fields), userInfo.id];
+
+                db.query(q, values, (err, data) => {
                     if (err) return res.status(500).json(err);
 
                     // Fetch the updated user information
-                    const selectQ = "SELECT `id`, `username`, `email`, `img` FROM users WHERE `id` = ?";
+                    const selectQ = "SELECT id, username, email, img FROM users WHERE id = $1";
                     db.query(selectQ, [userInfo.id], (err, updatedData) => {
                         if (err) return res.status(500).json(err);
-                        return res.status(200).json(updatedData[0]);
+                        return res.status(200).json(updatedData.rows[0]);
                     });
                 });
             }).catch(err => res.status(500).json(err));
         });
     });
 };
-
 
 // Delete user profile
 export const deleteUserProfile = (req, res) => {
@@ -95,7 +99,7 @@ export const deleteUserProfile = (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
-        const q = "DELETE FROM users WHERE `id` = ?";
+        const q = "DELETE FROM users WHERE id = $1";
         db.query(q, [userInfo.id], (err, data) => {
             if (err) return res.status(500).json(err);
             return res.status(200).json("User profile successfully deleted!");
