@@ -120,12 +120,9 @@ const Single = () => {
           <h3>Comments</h3>
           {comments.map((comment) => (
             <div key={comment.id} className="comment">
-              <div className="user">
-                <img src={comment.userImg} alt="User-Icon" />
-                <div className="info">
+              <div className="user-info">
                   <span>{comment.username}</span>
                   <p>{moment(comment.date).fromNow()}</p>
-                </div>
               </div>
               {editingCommentId === comment.id ? (
                 <form
@@ -139,20 +136,22 @@ const Single = () => {
                     value={editingCommentContent}
                     onChange={(e) => setEditingCommentContent(e.target.value)}
                   />
-                  <button type="submit">Update</button>
-                  <button
-                    type="button"
-                    onClick={() => setEditingCommentId(null)}
-                  >
-                    Cancel
-                  </button>
+                  <div>
+                    <button type="submit">Update</button>
+                    <button
+                      type="button"
+                      onClick={() => setEditingCommentId(null)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </form>
               ) : (
                 <p>{comment.content}</p>
               )}
               {(currentUser?.username === post?.username ||
                 currentUser?.username === comment.username) && (
-                <div className="comment-actions">
+                <div className="buttons">
                   <button
                     onClick={() => {
                       setEditingCommentId(comment.id);
