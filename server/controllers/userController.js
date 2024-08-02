@@ -70,12 +70,19 @@ export const updateUserProfile = (req, res) => {
                 const q = "UPDATE users SET ? WHERE `id` = ?";
                 db.query(q, [fields, userInfo.id], (err, data) => {
                     if (err) return res.status(500).json(err);
-                    return res.status(200).json("User profile successfully updated!");
+
+                    // Fetch the updated user information
+                    const selectQ = "SELECT `id`, `username`, `email`, `img` FROM users WHERE `id` = ?";
+                    db.query(selectQ, [userInfo.id], (err, updatedData) => {
+                        if (err) return res.status(500).json(err);
+                        return res.status(200).json(updatedData[0]);
+                    });
                 });
             }).catch(err => res.status(500).json(err));
         });
     });
 };
+
 
 // Delete user profile
 export const deleteUserProfile = (req, res) => {

@@ -5,10 +5,10 @@ import { AuthContext } from '../context/authContext';
 
 const EditProfile = () => {
   const { id } = useParams();
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, setCurrentUser } = useContext(AuthContext); // Access setCurrentUser
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [img, setImg] = useState(null); // Update to handle file instead of string
+  const [img, setImg] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +26,23 @@ const EditProfile = () => {
     fetchUser();
   }, [id]);
 
-  const handleSubmit = async (e) => {
+  const handleProfileUpdate = async (updatedData) => {
+    try {
+      const res = await axios.put(`/api/users/${id}`, updatedData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
+      const updatedUser = res.data;
+      setCurrentUser(updatedUser); // Update the currentUser in context
+      navigate(`/profile/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -36,16 +52,7 @@ const EditProfile = () => {
       formData.append('img', img);
     }
 
-    try {
-      await axios.put(`/api/users/${id}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      navigate(`/profile/${id}`);
-    } catch (err) {
-      console.log(err);
-    }
+    handleProfileUpdate(formData);
   };
 
   return (

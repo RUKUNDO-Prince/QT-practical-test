@@ -11,7 +11,6 @@ export const AuthContextProvider = ({ children }) => {
       return null;
     }
   });
-  
 
   const login = async (inputs) => {
     try {
@@ -36,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [currentUser]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
+    <AuthContext.Provider value={{ currentUser, setCurrentUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
