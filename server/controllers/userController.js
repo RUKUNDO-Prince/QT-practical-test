@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 // Setup multer for image uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../client/public/uploads/usersProfile'));
+        cb(null, path.join(__dirname, process.env.UPLOADS_DIR2));
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname));
