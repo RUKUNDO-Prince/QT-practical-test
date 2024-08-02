@@ -32,7 +32,7 @@ const EditProfile = () => {
     const formData = new FormData();
     formData.append('username', username);
     formData.append('email', email);
-    if (img instanceof File) { // Check if img is a file before appending
+    if (img instanceof File) {
       formData.append('img', img);
     }
 
