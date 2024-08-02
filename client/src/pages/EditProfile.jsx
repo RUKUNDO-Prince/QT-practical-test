@@ -8,7 +8,7 @@ const EditProfile = () => {
   const { currentUser } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState(null); // Update to handle file instead of string
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,11 +28,19 @@ const EditProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('username', username);
+    formData.append('email', email);
+    if (img instanceof File) { // Check if img is a file before appending
+      formData.append('img', img);
+    }
+
     try {
-      await axios.put(`/api/users/${id}`, {
-        username,
-        email,
-        img
+      await axios.put(`/api/users/${id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       });
       navigate(`/profile/${id}`);
     } catch (err) {
@@ -58,10 +66,9 @@ const EditProfile = () => {
             onChange={(e) => setEmail(e.target.value)} 
           />
           <input 
-            type="text" 
-            placeholder="Profile Image URL" 
-            value={img} 
-            onChange={(e) => setImg(e.target.value)} 
+            type="file" 
+            placeholder="Profile Image" 
+            onChange={(e) => setImg(e.target.files[0])} 
           />
           <button type="submit">Update Profile</button>
         </form>
