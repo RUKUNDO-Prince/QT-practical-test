@@ -1,7 +1,7 @@
 // IMPORTS
 import React from 'react'
 import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router-dom'
-import { Home, Login, Register, Single, Write } from './pages';
+import { Home, Profile, Login, Register, Single, Write, EditProfile } from './pages';
 import { Footer, Navbar } from './components';
 import "./style.scss"
 
@@ -25,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/profile/:id",
+        element: <Profile />
+      },
+      {
+        path: "/edit-profile/:id",
+        element: <EditProfile />
       },
       {
         path: "/write",

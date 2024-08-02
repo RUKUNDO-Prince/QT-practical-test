@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { logo } from '../assets/img'
-import { AuthContext } from '../context/authContext'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { logo } from '../assets/img';
+import { AuthContext } from '../context/authContext';
 
 const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
-
 
   return (
     <div className='navbar'>
@@ -25,13 +24,25 @@ const Navbar = () => {
           <Link to="/?category=food" className='link'><h6>Food</h6></Link>
         </div>
         <div className='other-links'>
-          <span>{currentUser?.username}</span>
-          {currentUser ? <span className='logout' onClick={logout}>Logout</span> : <Link className='link' to="/login">Login</Link>}
+          {currentUser ? (
+            <>
+              <Link to={`/profile/${currentUser.id}`} className='link'>
+                {currentUser.img ? (
+                  <img src={currentUser.img} alt="User Avatar" className='user-img' />
+                ) : (
+                  <span>{currentUser.username}</span>
+                )}
+              </Link>
+              <span className='logout' onClick={logout}>Logout</span>
+            </>
+          ) : (
+            <Link className='link' to="/login">Login</Link>
+          )}
           <span className='write'><Link className='link' to='/write'>Write</Link></span>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
