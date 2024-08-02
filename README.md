@@ -1,9 +1,5 @@
-Copy Markdown
-
-Copy the markdown below to your clipboard.
-
 <p align="left">
-  <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
+  <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="100" />
 </p>
 <p align="left">
     <h1 align="left">QT-PRACTICAL-TEST</h1>
@@ -69,6 +65,7 @@ Copy the markdown below to your clipboard.
 
 ```sh
 └── QT-practical-test/
+    ├── README.md
     ├── client
     │   ├── .eslintrc.cjs
     │   ├── .gitignore
