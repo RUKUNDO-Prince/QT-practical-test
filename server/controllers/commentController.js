@@ -1,5 +1,8 @@
 import { db } from "../config/DBConnect.js";
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 // GET ALL COMMENTS FOR A SPECIFIC POST
 export const getComments = (req, res) => {
@@ -15,7 +18,7 @@ export const addComment = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         const q = "INSERT INTO comments(`content`, `date`, `postId`, `uid`) VALUES (?)";
@@ -38,7 +41,7 @@ export const deleteComment = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         const commentId = req.params.id;
@@ -55,7 +58,7 @@ export const updateComment = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         const commentId = req.params.id;

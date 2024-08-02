@@ -1,6 +1,9 @@
 import { db } from "../config/DBConnect.js";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 export const register = (req, res) => {
     // CHECK EXISTING USER
@@ -38,7 +41,7 @@ export const login = (req, res) => {
         const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
         if (!isPasswordCorrect) return res.status(400).json("Wrong username or password!");
 
-        const token = jwt.sign({id: data[0].id}, "jwtkey");
+        const token = jwt.sign({id: data[0].id}, process.env.JWT_SECRET);
         const { password, ...otherInfo } = data[0];
 
         res.cookie("access_token", token, {

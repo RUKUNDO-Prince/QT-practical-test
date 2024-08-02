@@ -4,6 +4,9 @@ import { fileURLToPath } from 'url';
 import { db } from "../config/DBConnect.js";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 // Get the current file path and directory
 const __filename = fileURLToPath(import.meta.url);
@@ -26,7 +29,7 @@ export const getUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         const q = "SELECT `id`, `username`, `email`, `img` FROM users WHERE `id` = ?";
@@ -42,7 +45,7 @@ export const updateUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         upload.single('img')(req, res, async (uploadErr) => {
@@ -89,7 +92,7 @@ export const deleteUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
 
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         const q = "DELETE FROM users WHERE `id` = ?";

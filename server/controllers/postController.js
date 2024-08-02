@@ -1,5 +1,8 @@
 import { db } from "../config/DBConnect.js";
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 export const getPosts = (req, res) => {
     const q = req.query.category ? "SELECT * FROM posts WHERE category=?" : "SELECT * FROM posts";
@@ -24,7 +27,7 @@ export const addPost = (req, res) => {
     if (!token) return res.status(401).json("Not authenticated!");
 
     // CHECK IF TOKEN IS VALID
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         // IF EVERYTHING IS OK
@@ -51,7 +54,7 @@ export const deletePost = (req, res) => {
     if (!token) return res.status(401).json("Not authenticated!");
 
     // CHECK IF TOKEN IS VALID
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
         
         // IF EVERYTHING IS OK
@@ -71,7 +74,7 @@ export const updatePost = (req, res) => {
     if (!token) return res.status(401).json("Not authenticated!");
 
     // CHECK IF TOKEN IS VALID
-    jwt.verify(token, "jwtkey", (err, userInfo) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, userInfo) => {
         if (err) return res.status(403).json("Invalid Token!");
 
         // IF EVERYTHING IS OK
