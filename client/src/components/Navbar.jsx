@@ -16,7 +16,7 @@ const Navbar = () => {
         </div>
         {/* CATEGORIES LIST */}
         <div className="links">
-          <Link to="/?category=art" className='link'><h6>Arts</h6></Link>
+          <Link to="/?category=arts" className='link'><h6>Arts</h6></Link>
           <Link to="/?category=science" className='link'><h6>Science</h6></Link>
           <Link to="/?category=technology" className='link'><h6>Technology</h6></Link>
           <Link to="/?category=cinema" className='link'><h6>Cinema</h6></Link>
