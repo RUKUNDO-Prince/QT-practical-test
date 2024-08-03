@@ -176,7 +176,7 @@
 
 | File                                                                             | Summary                         |
 | ---                                                                              | ---                             |
-| [db.sql](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/db.sql) | <code>► INSERT-TEXT-HERE</code> |
+| [db.sql](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/db.sql) | <code>► DATABASE FILE FOR THE POSTGRESQL DB USED</code> |
 
 </details>
 
@@ -184,11 +184,11 @@
 
 | File                                                                                                          | Summary                         |
 | ---                                                                                                           | ---                             |
-| [index.html](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/index.html)               | <code>► INSERT-TEXT-HERE</code> |
-| [vite.config.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/vite.config.js)       | <code>► INSERT-TEXT-HERE</code> |
-| [package.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/package.json)           | <code>► INSERT-TEXT-HERE</code> |
-| [.eslintrc.cjs](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/.eslintrc.cjs)         | <code>► INSERT-TEXT-HERE</code> |
-| [package-lock.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/package-lock.json) | <code>► INSERT-TEXT-HERE</code> |
+| [index.html](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/index.html)               | <code>► MAIN HTML FILE</code> |
+| [vite.config.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/vite.config.js)       | <code>► VITE CONFIGURATION FILE</code> |
+| [package.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/package.json)           | <code>► FOR DEPENDENCIES</code> |
+| [.eslintrc.cjs](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/.eslintrc.cjs)         | <code>► SOME CONFIGURATION</code> |
+| [package-lock.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/package-lock.json) | <code>► FOR PACKAGES</code> |
 
 </details>
 
@@ -196,11 +196,11 @@
 
 | File                                                                                                | Summary                         |
 | ---                                                                                                 | ---                             |
-| [App.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/App.jsx)       | <code>► INSERT-TEXT-HERE</code> |
-| [style.scss](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/style.scss) | <code>► INSERT-TEXT-HERE</code> |
-| [App.css](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/App.css)       | <code>► INSERT-TEXT-HERE</code> |
-| [index.css](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/index.css)   | <code>► INSERT-TEXT-HERE</code> |
-| [main.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/main.jsx)     | <code>► INSERT-TEXT-HERE</code> |
+| [App.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/App.jsx)       | <code>► MAIN JS FILE</code> |
+| [style.scss](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/style.scss) | <code>► MAIN STYLESHEET</code> |
+| [App.css](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/App.css)       | <code>► FOR GLOBAL STYLES</code> |
+| [index.css](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/index.css)   | <code>► SOME STYLES</code> |
+| [main.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/main.jsx)     | <code>► MAIN FILE</code> |
 
 </details>
 
@@ -208,7 +208,7 @@
 
 | File                                                                                                    | Summary                         |
 | ---                                                                                                     | ---                             |
-| [data.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/constants/data.js) | <code>► INSERT-TEXT-HERE</code> |
+| [data.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/constants/data.js) | <code>► FOR DUMMY DATA</code> |
 
 </details>
 
@@ -216,14 +216,14 @@
 
 | File                                                                                                                | Summary                         |
 | ---                                                                                                                 | ---                             |
-| [Login.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Login.jsx)             | <code>► INSERT-TEXT-HERE</code> |
-| [Single.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Single.jsx)           | <code>► INSERT-TEXT-HERE</code> |
-| [EditProfile.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/EditProfile.jsx) | <code>► INSERT-TEXT-HERE</code> |
-| [Write.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Write.jsx)             | <code>► INSERT-TEXT-HERE</code> |
-| [Home.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Home.jsx)               | <code>► INSERT-TEXT-HERE</code> |
-| [Profile.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Profile.jsx)         | <code>► INSERT-TEXT-HERE</code> |
-| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/index.js)               | <code>► INSERT-TEXT-HERE</code> |
-| [Register.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Register.jsx)       | <code>► INSERT-TEXT-HERE</code> |
+| [Login.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Login.jsx)             | <code>► LOGIN PAGE</code> |
+| [Single.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Single.jsx)           | <code>► SINGLE BLOG PAGE</code> |
+| [EditProfile.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/EditProfile.jsx) | <code>► EDITING PROFILE PAGE</code> |
+| [Write.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Write.jsx)             | <code>► WRITE BLOG PAGE</code> |
+| [Home.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Home.jsx)               | <code>► HOMEPAGE</code> |
+| [Profile.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Profile.jsx)         | <code>► PROFILE PAGE</code> |
+| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/index.js)               | <code>► FOR EXPORTING THE PAGES</code> |
+| [Register.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/pages/Register.jsx)       | <code>► REGISTER PAGE</code> |
 
 </details>
 
@@ -231,10 +231,10 @@
 
 | File                                                                                                           | Summary                         |
 | ---                                                                                                            | ---                             |
-| [Menu.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Menu.jsx)     | <code>► INSERT-TEXT-HERE</code> |
-| [Footer.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Footer.jsx) | <code>► INSERT-TEXT-HERE</code> |
-| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/index.js)     | <code>► INSERT-TEXT-HERE</code> |
-| [Navbar.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Navbar.jsx) | <code>► INSERT-TEXT-HERE</code> |
+| [Menu.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Menu.jsx)     | <code>► MENU COMPONENT</code> |
+| [Footer.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Footer.jsx) | <code>► FOOTER COMPONENT</code> |
+| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/index.js)     | <code>► FOR EXPORTING THE COMPONENTS</code> |
+| [Navbar.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/components/Navbar.jsx) | <code>► NAVBAR COMPONENT</code> |
 
 </details>
 
@@ -242,7 +242,7 @@
 
 | File                                                                                                                  | Summary                         |
 | ---                                                                                                                   | ---                             |
-| [authContext.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/context/authContext.jsx) | <code>► INSERT-TEXT-HERE</code> |
+| [authContext.jsx](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/client/src/context/authContext.jsx) | <code>► AUTH CONTEXT</code> |
 
 </details>
 
@@ -250,10 +250,10 @@
 
 | File                                                                                                          | Summary                         |
 | ---                                                                                                           | ---                             |
-| [package.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/package.json)           | <code>► INSERT-TEXT-HERE</code> |
-| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/index.js)                   | <code>► INSERT-TEXT-HERE</code> |
-| [.env.template](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/.env.template)         | <code>► INSERT-TEXT-HERE</code> |
-| [package-lock.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/package-lock.json) | <code>► INSERT-TEXT-HERE</code> |
+| [package.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/package.json)           | <code>► FOR DEPENDENCIES</code> |
+| [index.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/index.js)                   | <code>► SERVER FILE</code> |
+| [.env.template](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/.env.template)         | <code>► TEMPLATE OF ENV FILE USED</code> |
+| [package-lock.json](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/package-lock.json) | <code>► FOR PACKAGES</code> |
 
 </details>
 
@@ -261,10 +261,10 @@
 
 | File                                                                                                     | Summary                         |
 | ---                                                                                                      | ---                             |
-| [comments.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/comments.js) | <code>► INSERT-TEXT-HERE</code> |
-| [auth.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/auth.js)         | <code>► INSERT-TEXT-HERE</code> |
-| [posts.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/posts.js)       | <code>► INSERT-TEXT-HERE</code> |
-| [users.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/users.js)       | <code>► INSERT-TEXT-HERE</code> |
+| [comments.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/comments.js) | <code>► COMMENTS ROUTES</code> |
+| [auth.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/auth.js)         | <code>► AUTHENTICATION ROUTES</code> |
+| [posts.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/posts.js)       | <code>► POSTS ROUTES</code> |
+| [users.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/routes/users.js)       | <code>► USERS ROUTES</code> |
 
 </details>
 
@@ -272,7 +272,7 @@
 
 | File                                                                                                       | Summary                         |
 | ---                                                                                                        | ---                             |
-| [DBConnect.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/config/DBConnect.js) | <code>► INSERT-TEXT-HERE</code> |
+| [DBConnect.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/config/DBConnect.js) | <code>► DB CONFIGURATION FILE</code> |
 
 </details>
 
@@ -280,10 +280,10 @@
 
 | File                                                                                                                            | Summary                         |
 | ---                                                                                                                             | ---                             |
-| [authController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/authController.js)       | <code>► INSERT-TEXT-HERE</code> |
-| [postController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/postController.js)       | <code>► INSERT-TEXT-HERE</code> |
-| [commentController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/commentController.js) | <code>► INSERT-TEXT-HERE</code> |
-| [userController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/userController.js)       | <code>► INSERT-TEXT-HERE</code> |
+| [authController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/authController.js)       | <code>► AUTHENTICATION CONTROLLERS</code> |
+| [postController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/postController.js)       | <code>► POSTS CONTROLLERS</code> |
+| [commentController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/commentController.js) | <code>► COMMENTS CONTROLLERS</code> |
+| [userController.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/controllers/userController.js)       | <code>► USERS CONTROLLERS</code> |
 
 </details>
 
@@ -291,7 +291,7 @@
 
 | File                                                                                                  | Summary                         |
 | ---                                                                                                   | ---                             |
-| [auth.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/middlewares/auth.js) | <code>► INSERT-TEXT-HERE</code> |
+| [auth.js](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/server/middlewares/auth.js) | <code>► AUTHENTICATION MIDDLEWARES</code> |
 
 </details>
 
@@ -303,7 +303,7 @@
 
 Ensure you have the following dependencies installed on your system:
 
-* **JavaScript**: `version x.y.z`
+* **JavaScript**: `version 20.16.0`
 
 ### ⚙️ Installation
 
@@ -319,36 +319,48 @@ git clone https://github.com/RUKUNDO-Prince/QT-practical-test
 cd QT-practical-test
 ```
 
-3. Install the dependencies:
+3. Change directories to client or server:
 
 ```sh
-npm install
+cd client
+cd server
+```
+
+3. Install the dependencies for both client and server:
+
+```sh
+npm install (for both)
 ```
 
 ### 🤖 Running QT-practical-test
 
-Use the following command to run QT-practical-test:
+Use the following command to run QT-practical-test for client:
 
 ```sh
-node app.js
+npm run dev
 ```
 
-### 🧪 Tests
-
-To execute tests, run:
+Use the following command to run QT-practical-test for server:
 
 ```sh
-npm test
+npm start
 ```
 
----
+### 🧪 Database
 
-## 🛠 Project Roadmap
+To create the database used, import the provided file and run:
 
-- [X] `► INSERT-TASK-1`
-- [ ] `► INSERT-TASK-2`
-- [ ] `► ...`
+1. Create a new database (replace the placeholders with the actual credentials)
 
+```sh
+createdb -U [username] -h [hostname] [new_database_name]
+```
+
+1.Import the SQL file provided into the new database using the psql command (replace the placeholders with the actual credentials)
+
+```sh
+psql -U [username] -h [hostname] -d [new_database_name] -f db.sql
+```
 ---
 
 ## 🤝 Contributing
@@ -396,7 +408,7 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 
 ## 👏 Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- QT software solutions
 
 [**Return**](#-quick-links)
 
