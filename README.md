@@ -50,15 +50,18 @@
 
 ## 📍 Overview
 
-<code>► INSERT-TEXT-HERE</code>
+<p align="left">
+	QT-practical-test is a blog application developed as a practical test for the QT recruitment of software developers. It provides a platform for users to create, read, update, and delete blog posts.
+</p>
 
 ---
 
 ## 📦 Features
 
-<p align="left">
-	QT-practical-test is a blog application developed as a practical test for the QT recruitment of software developers. It provides a platform for users to create, read, update, and delete blog posts.
-</p>
+> - User authentication (login, register)
+> - Create, read, update, and delete blog posts
+> - Comment on blog posts
+> - User profile management (edit and delete profile)
 
 ---
 
