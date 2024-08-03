@@ -38,7 +38,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
 app.use('/api/posts', postRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api', commentRoutes);
+app.use('/api/comments', commentRoutes);
 
 const PORT = process.env.PORT || 8800;
 

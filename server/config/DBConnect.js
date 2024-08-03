@@ -5,7 +5,7 @@ dotenv.config();
 
 const { Client } = pkg;
 
-// Database connection configuration
+// DB CONNECTION CONFIGURATION
 const dbConfig = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -14,10 +14,10 @@ const dbConfig = {
     port: process.env.DB_PORT || 5432,
 };
 
-// Create a new PostgreSQL client
+// CREATE A NEW POSTGRES CLIENT
 export const db = new Client(dbConfig);
 
-// Connect to the database
+// CONNECT TO DATABASE
 db
     .connect()
     .then(() => {

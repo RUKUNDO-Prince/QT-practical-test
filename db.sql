@@ -163,6 +163,8 @@ COPY public.comments (id, content, date, postid, uid) FROM stdin;
 1	I like this post	2024-08-02 20:57:33.85	1	2
 3		2024-08-03 09:44:27.045	19	2
 4	I like this blog	2024-08-03 09:46:15.385	4	2
+6	This is interesting	2024-08-03 10:54:03.05	3	1
+7	I don't know why I like this post	2024-08-03 10:54:21.842	3	1
 \.
 
 
@@ -212,7 +214,7 @@ COPY public.users (id, username, email, password, img, created_at) FROM stdin;
 -- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.comments_id_seq', 5, true);
+SELECT pg_catalog.setval('public.comments_id_seq', 7, true);
 
 
 --

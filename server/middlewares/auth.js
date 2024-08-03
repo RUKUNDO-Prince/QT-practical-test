@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
+// TOKEN VERIFICATION
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.access_token;
 

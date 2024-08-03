@@ -3,9 +3,10 @@ import { addComment, deleteComment, getComments, updateComment } from '../contro
 
 const router = express.Router();
 
-router.get('/comments/:postId', getComments);
-router.post('/comments', addComment);
-router.delete('/comments/:id', deleteComment);
-router.put('/comments/:id', updateComment);
+// COMMENTSROUTES
+router.get('/:postId', getComments);
+router.post('/', addComment);
+router.delete('/:id', deleteComment);
+router.put('/:id', updateComment);
 
 export default router;

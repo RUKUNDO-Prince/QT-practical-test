@@ -8,11 +8,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Get the current file path and directory
+// GET CURRENT FILE PATH AND FILENAME
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Setup multer for image uploads
+// IMAGE UPLOADS
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, process.env.UPLOADS_DIR2));
@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Get user profile
+// GET USER PROFILE
 export const getUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
@@ -40,7 +40,7 @@ export const getUserProfile = (req, res) => {
     });
 };
 
-// Update user profile
+// UPDATE USER PROFILE
 export const updateUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");
@@ -79,7 +79,7 @@ export const updateUserProfile = (req, res) => {
                 db.query(q, values, (err, data) => {
                     if (err) return res.status(500).json(err);
 
-                    // Fetch the updated user information
+                    // FETCH THE UPDATED USER PROFILE
                     const selectQ = "SELECT id, username, email, img FROM users WHERE id = $1";
                     db.query(selectQ, [userInfo.id], (err, updatedData) => {
                         if (err) return res.status(500).json(err);
@@ -91,7 +91,7 @@ export const updateUserProfile = (req, res) => {
     });
 };
 
-// Delete user profile
+// DELETE USER PROFILE
 export const deleteUserProfile = (req, res) => {
     const token = req.cookies.access_token;
     if (!token) return res.status(401).json("Not authenticated!");

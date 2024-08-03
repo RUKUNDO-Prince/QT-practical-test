@@ -47,8 +47,8 @@ export const login = (req, res) => {
         res.cookie("access_token", token, {
             httpOnly: true,
         }).status(200).json({
-            token,   // Send the token if needed
-            user: otherInfo  // Send the user info without the password
+            token,
+            user: otherInfo
         });
     });
 };
