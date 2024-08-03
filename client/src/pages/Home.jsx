@@ -20,11 +20,13 @@ const Home = () => {
     fetchData();
   }, [category]);
 
+  // FOR FORMATTING THE TEXT FROM THE TEXT EDITOR USED TO CREATE THE BLOG
   const getText = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return doc.body.textContent;
   };
 
+  // THE SHOW-MORE FUNCTIONALITY
   const handleShowMore = () => {
     setVisiblePosts((prev) => prev + 3);
   };
@@ -32,6 +34,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="posts">
+        {/* TO DISPLAY THE POSTS */}
         {posts.slice(0, visiblePosts).map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
@@ -49,6 +52,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      {/* SHOW MORE POSTS */}
       {visiblePosts < posts.length && (
         <button onClick={handleShowMore} className="show-more">
           Show More

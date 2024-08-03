@@ -9,6 +9,7 @@ const Profile = () => {
   const { currentUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // FETCHING A USER
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -21,6 +22,7 @@ const Profile = () => {
     fetchUser();
   }, [id]);
 
+  // DELETING A USER
   const handleDelete = async () => {
     try {
       await axios.delete(`/api/users/${id}`);

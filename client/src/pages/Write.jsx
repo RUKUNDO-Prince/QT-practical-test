@@ -15,6 +15,7 @@ const Write = () => {
 
   const navigate = useNavigate();
 
+  // FOR IMAGE UPLOAD
   const upload = async () => {
     try {
       const formData = new FormData();
@@ -26,6 +27,7 @@ const Write = () => {
     }
   };
 
+  // CREATING AND UPDATING A BLOG POST
   const handleClick = async (e) => {
     e.preventDefault();
     const imgUrl = await upload();
@@ -61,6 +63,7 @@ const Write = () => {
           value={title}
         />
         <div className="editorContainer">
+          {/* RICH TEXT EDITOR */}
           <ReactQuill
             className="editor"
             theme="snow"
@@ -93,6 +96,7 @@ const Write = () => {
           </div>
         </div>
         <div className="item">
+          {/* ADDING CATEGORIES */}
           <h1>Category</h1>
           <div className="category">
             <input

@@ -11,6 +11,7 @@ const EditProfile = () => {
   const [img, setImg] = useState(null);
   const navigate = useNavigate();
 
+  // FETCHING A USER
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -26,6 +27,7 @@ const EditProfile = () => {
     fetchUser();
   }, [id]);
 
+  // UPDATING A USER PROFILE
   const handleProfileUpdate = async (updatedData) => {
     try {
       const res = await axios.put(`/api/users/${id}`, updatedData, {
@@ -35,7 +37,7 @@ const EditProfile = () => {
       });
       
       const updatedUser = res.data;
-      setCurrentUser(updatedUser); // Update the currentUser in context
+      setCurrentUser(updatedUser);
       navigate(`/profile/${id}`);
     } catch (err) {
       console.log(err);

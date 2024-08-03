@@ -24,6 +24,7 @@ const Navbar = () => {
           <Link to="/?category=food" className='link'><h6>Food</h6></Link>
         </div>
         <div className='other-links'>
+          {/* SHOWING THE USER AND PROFILE */}
           {currentUser ? (
             <>
               <Link to={`/profile/${currentUser.id}`} className='link'>

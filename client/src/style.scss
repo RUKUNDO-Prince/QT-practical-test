@@ -527,7 +527,7 @@ $lightGreen: #b9e7e7;
           }
         }
 
-        // Comments section
+        // COMMENTS SECTION
         .comments {
           display: flex;
           flex-direction: column;
@@ -698,7 +698,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //WRITE
+    // WRITE A BLOG PAGE
     .add {
       margin-top: 20px;
       display: flex;
@@ -822,18 +822,18 @@ $lightGreen: #b9e7e7;
   .navbar .container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px; // Add gap between logo and links on smaller screens
+    gap: 10px;
   }
 
   .home .posts .post {
-    gap: 20px; // Reduce gap between posts for smaller screens
+    gap: 20px;
   }
 
   .single {
-    gap: 20px; // Reduce gap between content and menu on smaller screens
+    gap: 20px;
   }
 
   .add {
-    gap: 10px; // Reduce gap between content and menu on smaller screens
+    gap: 10px;
   }
 }

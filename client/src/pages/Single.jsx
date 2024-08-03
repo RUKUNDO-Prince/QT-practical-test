@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { deleteIcon, edit } from "../assets/img";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu } from "../components";
+import Menu from "../components/Menu";
 import axios from 'axios';
 import { AuthContext } from "../context/authContext";
 import moment from 'moment';
@@ -20,6 +20,7 @@ const Single = () => {
 
   const { currentUser } = useContext(AuthContext);
 
+  // Fetch post and comments data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,6 +36,7 @@ const Single = () => {
     fetchData();
   }, [postId]);
 
+  // Handle deleting a blog post
   const handleDelete = async () => {
     try {
       await axios.delete(`/api/posts/${postId}`);
@@ -44,6 +46,7 @@ const Single = () => {
     }
   };
 
+  // Handle adding a comment
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -60,6 +63,7 @@ const Single = () => {
     }
   };
 
+  // Handle editing a comment
   const handleCommentEdit = async (commentId) => {
     try {
       await axios.put(`/api/comments/${commentId}`, {
@@ -74,6 +78,7 @@ const Single = () => {
     }
   };
 
+  // Handle deleting a comment
   const handleCommentDelete = async (commentId) => {
     try {
       await axios.delete(`/api/comments/${commentId}`);
@@ -84,6 +89,7 @@ const Single = () => {
     }
   };
 
+  // Extract plain text from HTML
   const getText = (html) => {
     const doc = new DOMParser().parseFromString(html, "text/html");
     return doc.body.textContent;
@@ -116,6 +122,7 @@ const Single = () => {
             }}
           ></p>
         </div>
+        {/* COMMENTS SECTION */}
         <div className="comments">
           <h3>Comments</h3>
           {comments.map((comment) => (
@@ -180,7 +187,7 @@ const Single = () => {
         </div>
       </div>
       <div className="menu">
-        <Menu category={post?.category} />
+        <Menu category={post?.category} currentPostId={post?.id} />
       </div>
     </div>
   );
