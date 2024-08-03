@@ -5,7 +5,7 @@
     <h1 align="left">QT-PRACTICAL-TEST</h1>
 </p>
 <p align="left">
-    <em><code>► INSERT-TEXT-HERE</code></em>
+    <em><code>► BLOGS APPLICATION</code></em>
 </p>
 <p align="left">
 	<img src="https://img.shields.io/github/license/RUKUNDO-Prince/QT-practical-test?style=flat&color=0080ff" alt="license">
