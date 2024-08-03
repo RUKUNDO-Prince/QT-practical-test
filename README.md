@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="100" />
+  <img src="https://img.icons8.com/?size=512&id=55494&format=png" width="100" />
 </p>
 <p align="left">
     <h1 align="left">QT-PRACTICAL-TEST</h1>
@@ -22,13 +22,12 @@
 	<img src="https://img.shields.io/badge/Sass-CC6699.svg?style=flat&logo=Sass&logoColor=white" alt="Sass">
 	<img src="https://img.shields.io/badge/Nodemon-76D04B.svg?style=flat&logo=Nodemon&logoColor=white" alt="Nodemon">
 	<img src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white" alt="Vite">
-	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black" alt="React">
 	<br>
+	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black" alt="React">
 	<img src="https://img.shields.io/badge/Axios-5A29E4.svg?style=flat&logo=Axios&logoColor=white" alt="Axios">
 	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white" alt="ESLint">
-	<img src="https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=MySQL&logoColor=white" alt="MySQL">
-	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
 	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
+	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
 </p>
 <hr>
 
@@ -75,10 +74,39 @@
     │   ├── package.json
     │   ├── public
     │   │   ├── uploads
+    │   │   │   ├── 1.jpg
+    │   │   │   ├── 10.jpg
+    │   │   │   ├── 11.jpg
+    │   │   │   ├── 12.jpg
+    │   │   │   ├── 13.png
+    │   │   │   ├── 14.jpg
+    │   │   │   ├── 16.jpg
+    │   │   │   ├── 17.jpg
+    │   │   │   ├── 18.jpg
+    │   │   │   ├── 19.jpg
+    │   │   │   ├── 2.jpg
+    │   │   │   ├── 20.jpg
+    │   │   │   ├── 21.jpg
+    │   │   │   ├── 22.jpg
+    │   │   │   ├── 23.jpg
+    │   │   │   ├── 24.jpg
+    │   │   │   ├── 3.jpg
+    │   │   │   ├── 4.jpg
+    │   │   │   ├── 5.jpg
+    │   │   │   ├── 6.jpg
+    │   │   │   ├── 7.jpg
+    │   │   │   ├── 8.jpg
+    │   │   │   ├── 9.jpg
+    │   │   │   ├── a1.jpg
     │   │   │   └── usersProfile
     │   │   │       ├── 1722618320159.png
     │   │   │       ├── 1722621053158.png
-    │   │   │       └── 1722621372644.png
+    │   │   │       ├── 1722621372644.png
+    │   │   │       ├── 1722628582642.png
+    │   │   │       ├── 1722628711743.jpg
+    │   │   │       ├── 1722628812723.png
+    │   │   │       ├── 1722628829429.png
+    │   │   │       └── 1722629215089.jpg
     │   │   └── vite.svg
     │   ├── src
     │   │   ├── App.css
@@ -112,6 +140,7 @@
     │   │   │   └── index.js
     │   │   └── style.scss
     │   └── vite.config.js
+    ├── db.sql
     └── server
         ├── .env.template
         ├── .gitignore
@@ -127,18 +156,24 @@
         │   └── auth.js
         ├── package-lock.json
         ├── package.json
-        ├── routes
-        │   ├── auth.js
-        │   ├── comments.js
-        │   ├── posts.js
-        │   └── users.js
-        └── uploads
-            └── me.png
+        └── routes
+            ├── auth.js
+            ├── comments.js
+            ├── posts.js
+            └── users.js
 ```
 
 ---
 
 ## 🧩 Modules
+
+<details closed><summary>.</summary>
+
+| File                                                                             | Summary                         |
+| ---                                                                              | ---                             |
+| [db.sql](https://github.com/RUKUNDO-Prince/QT-practical-test/blob/master/db.sql) | <code>► INSERT-TEXT-HERE</code> |
+
+</details>
 
 <details closed><summary>client</summary>
 
